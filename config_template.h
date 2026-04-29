@@ -16,3 +16,10 @@ const int POLL_INTERVAL_MS = 2000;
 // ==== H182 Fail-Safe type =====
 const int LOCK_SIGNAL   = HIGH;
 const int UNLOCK_SIGNAL = LOW;
+
+constexpr int BUZZER_PIN = 8;          // 부저 신호 핀
+
+// 효과음 주파수 설정
+constexpr int TONE_UNLOCK_FREQ = 1500; // 열림: 높은 음
+constexpr int TONE_LOCK_FREQ = 800;    // 잠김: 낮은 음
+constexpr int TONE_DURATION_MS = 200;  // 음 지속 시간
