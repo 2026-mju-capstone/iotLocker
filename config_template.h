@@ -1,4 +1,3 @@
-// config_template.h (GitHub 업로드용)
 #pragma once
 #include <Arduino.h>
 
@@ -12,7 +11,7 @@ const int SERVER_PORT = 8080;
 const int LOCKER_ID = 1;
 const int RELAY_PIN = 7;
 const int POLL_INTERVAL_MS = 2000;
-
+constexpr unsigned long AUTO_LOCK_MS = 10000;
 // ==== H182 Fail-Safe type =====
 const int LOCK_SIGNAL   = HIGH;
 const int UNLOCK_SIGNAL = LOW;

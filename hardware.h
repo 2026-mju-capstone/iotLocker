@@ -10,6 +10,6 @@ bool isLocked();
 void checkAutoLock();
 
 void playUnlockSound();
-void playLockSound()
+void playLockSound();
 void playSuccessMelody();
 void playErrorBeep();
