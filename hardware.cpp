@@ -30,17 +30,6 @@ void closeLock() {
     playLockSound();
 }
 
-bool isLocked() {
-    return currentlyLocked;
-}
-
-void checkAutoLock() {
-    if (!currentlyLocked && (millis() - unlockTime >= AUTO_LOCK_MS)) {
-        Serial.println("[AUTO-LOCK] Timeout, locking...");
-        closeLock();
-    }
-}
-
 void playUnlockSound() {
     tone(BUZZER_PIN, 1500, 100);  // 1500Hz로 100ms
     delay(120);
