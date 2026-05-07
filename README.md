@@ -6,6 +6,7 @@
 * **MCU:** Arduino Uno R4 WiFi
 * **Actuator:** H182 Fail-Safe 솔레노이드 (전류 인가 시 잠김, 차단 시 열림)
 * **Control:** 릴레이 모듈 (제어 핀: D7)
+* **Buzzer:** passive buzzer(제어 핀: D8)
 
 ## 2. 주요 기능
 * **명령 폴링:** 2초(2000ms) 주기로 서버 API(`/api/lockers/{id}/pending`) 확인
