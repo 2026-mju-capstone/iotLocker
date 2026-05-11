@@ -1,11 +1,11 @@
 #pragma once
 #include <Arduino.h>
 
-// 서버에서 받은 명령의 종류를 정의 (DB enum과 일치: OPEN, LOCK)
+// 서버에서 받은 명령의 종류를 정의 (DB enum과 일치: OPEN, CLOSE)
 enum LockerCommand {
   CMD_NONE,
   CMD_OPEN,
-  CMD_LOCK,
+  CMD_CLOSE,
   CMD_ERROR
 };
 

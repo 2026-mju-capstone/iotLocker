@@ -142,7 +142,7 @@ PollResult pollCommand() {
         result.command = CMD_OPEN;
         result.commandId = extractCommandId(response);
     } else if (response.indexOf("\"command\":\"CLOSE\"") > 0) {
-        result.command = CMD_LOCK;
+        result.command = CMD_CLOSE;
         result.commandId = extractCommandId(response);
     }
 

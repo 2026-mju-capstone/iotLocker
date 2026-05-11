@@ -36,7 +36,7 @@ void loop() {
         openLock();
         sendAck(result.commandId);
     }
-    else if (result.command == CMD_LOCK) {
+    else if (result.command == CMD_CLOSE) {
         Serial.print("[LOCK] Executing command_id=");
         Serial.println(result.commandId);
         closeLock();
