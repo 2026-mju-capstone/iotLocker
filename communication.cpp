@@ -11,7 +11,7 @@ String ackBasePath;
 
 void setupWiFi() {
     pollPath = "/api/lockers/" + String(LOCKER_ID) + "/pending";
-    ackBasePath = "/api/lockers/" + String(LOCKER_ID) + "/ack/";
+    ackBasePath = "/api/lockers/" + String(LOCKER_ID) + "/commands/";
     
     if (WiFi.status() == WL_NO_MODULE) {
         Serial.println("[FATAL] WiFi module not found!");
@@ -141,7 +141,7 @@ PollResult pollCommand() {
     if (response.indexOf("\"command\":\"OPEN\"") > 0) {
         result.command = CMD_OPEN;
         result.commandId = extractCommandId(response);
-    } else if (response.indexOf("\"command\":\"LOCK\"") > 0) {
+    } else if (response.indexOf("\"command\":\"CLOSE\"") > 0) {
         result.command = CMD_LOCK;
         result.commandId = extractCommandId(response);
     }
@@ -150,7 +150,7 @@ PollResult pollCommand() {
 }
 
 void sendAck(long commandId) {
-    String path = ackBasePath + String(commandId);
+    String path = ackBasePath + String(commandId) + "/ack";
     client.post(path);
     int statusCode = client.responseStatusCode();
     String body = client.responseBody();
