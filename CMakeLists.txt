@@ -8,7 +8,7 @@ include_directories(.)
 add_executable(smartLocker
     communication.cpp
     communication.h
-    config_template.h
+    config.h
     hardware.cpp
     hardware.h
     smartLocker.ino
